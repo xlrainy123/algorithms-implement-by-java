@@ -1,9 +1,9 @@
 package sort;
 
-public interface Sortable<T> {
+public interface Sortable {
 
-    void quickSort(T[] arr);
-    void mergeSort(T[] arr);
-    void heapSort(T[] arr);
+    void quickSort(int[] arr);
+    void mergeSort(int[] arr);
+    void heapSort(int[] arr);
 
 }
