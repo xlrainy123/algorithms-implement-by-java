@@ -50,7 +50,7 @@ public class TreeClient {
         Utils.println(tree.getHeight(tree.getRoot(), true));
 
         Utils.println(tree.getAllAncestors(tree.getRoot().right.right.left));
-
-        Utils.println(tree.getNestestAncestor(tree.getRoot(), tree.getRoot().right.right.left, tree.getRoot().left.left));
+        Utils.println(tree.getAllAncestors(tree.getRoot().left.left));
+        Utils.println(tree.getNestestAncestor(tree.getRoot(), tree.getRoot().right.right.left, tree.getRoot().right.left, true));
     }
 }

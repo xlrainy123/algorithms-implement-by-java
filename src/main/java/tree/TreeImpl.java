@@ -274,7 +274,13 @@ public class TreeImpl implements Tree {
         throw new NullPointerException("child节点不存在");
     }
 
-
+    /**
+     * 获取最近公共祖先节点
+     * @param root
+     * @param one
+     * @param two
+     * @return
+     */
     public TreeNode getNestestAncestor(TreeNode root, TreeNode one, TreeNode two){
 
         if (root == null || one == root || two == null){
@@ -283,6 +289,7 @@ public class TreeImpl implements Tree {
 
         List<TreeNode> nodes1 = getAllAncestors(one);
         List<TreeNode> nodes2 = getAllAncestors(two);
+
         if (nodes1.size() < nodes2.size() && nodes2.contains(one)){
             return one;
         }
@@ -301,8 +308,37 @@ public class TreeImpl implements Tree {
                 break;
             }
         }
+
         return preEqualNode;
     }
+
+    /**
+     *
+     * @param root
+     * @param one
+     * @param two
+     * @param isBetter:选择不同的算法
+     * @return
+     */
+    public TreeNode getNestestAncestor(TreeNode root, TreeNode one, TreeNode two, final boolean isBetter){
+        if (!isBetter){
+            return getNestestAncestor(root, one, two);
+        }else {
+            if (root == null || one == root || two == root){
+                return root;
+            }
+
+            TreeNode left = getNestestAncestor(root.left, one, two, isBetter);
+            TreeNode right = getNestestAncestor(root.right, one, two, isBetter);
+
+            if (left != null && right != null){
+                return root;
+            }
+            System.out.println("better");
+            return left != null ? left : right;
+        }
+    }
+
 
     @Override
     public TreeNode getRoot(){
