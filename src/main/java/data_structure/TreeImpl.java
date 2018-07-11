@@ -13,6 +13,8 @@ public class TreeImpl implements Tree{
         this.root = root;
         this.height = getHeight(root);
     }
+
+    @Override
     public List<TreeNode> preOrder(boolean withRec, TreeNode currentNode){
 
         List<TreeNode> nodeList = new ArrayList<TreeNode>();
@@ -51,29 +53,38 @@ public class TreeImpl implements Tree{
         }
 
     }
+
+    @Override
     public List<TreeNode> inOrder(TreeNode currentNode){
         return null;
     }
 
+    @Override
     public List<TreeNode> postOrder(TreeNode currentNode){
         return null;
     }
 
+    @Override
     public List<TreeNode> levelOrder(TreeNode currentNode){
         return null;
     }
 
+    @Override
     public int getHeight(TreeNode currentNode){
         return 1;
     }
 
+    @Override
     public List<TreeNode> getAllAcestors(TreeNode currentNode){
         return null;
     }
 
+    @Override
     public TreeNode getRoot(){
         return this.root;
     }
+
+    @Override
     public void setRoot(TreeNode newRoot){
         this.root = newRoot;
     }
