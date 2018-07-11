@@ -1,7 +1,5 @@
-package client.data_structure;
+package tree;
 
-import data_structure.TreeImpl;
-import data_structure.TreeNode;
 import utils.Utils;
 
 import java.util.List;
@@ -34,6 +32,25 @@ public class TreeClient {
         TreeImpl tree = new TreeImpl(node);
 
         List<TreeNode> nodeList = tree.preOrder(true, tree.getRoot());
-        Utils.print(nodeList);
+        Utils.println(nodeList);
+
+        nodeList.clear();
+        nodeList = tree.inOrder(false, tree.getRoot());
+        Utils.println(nodeList);
+
+        nodeList.clear();
+        nodeList = tree.postOrder(false, tree.getRoot());
+        Utils.println(nodeList);
+
+        nodeList.clear();
+        nodeList = tree.levelOrder(tree.getRoot());
+        Utils.println(nodeList);
+
+        Utils.println(tree.getRoot());
+        Utils.println(tree.getHeight(tree.getRoot(), true));
+
+        Utils.println(tree.getAllAncestors(tree.getRoot().right.right.left));
+
+        Utils.println(tree.getNestestAncestor(tree.getRoot(), tree.getRoot().right.right.left, tree.getRoot().left.left));
     }
 }

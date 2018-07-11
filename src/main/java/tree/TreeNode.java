@@ -1,4 +1,4 @@
-package data_structure;
+package tree;
 
 public class TreeNode implements Comparable<TreeNode>{
 
