@@ -6,10 +6,10 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class SortClient {
-    static int[] arr = {10,5,8,5,9};
+    static int[] arr = {7,6,3,1,5};
     public static void main(String[] args){
         SortImp sortImp = new SortImp();
-        sortImp.quickSort(arr);
+        sortImp.heapSort(arr);
         for (int a : arr){
             Utils.print(a+",");
         }
