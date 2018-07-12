@@ -140,8 +140,62 @@ public class SortImp implements Sortable{
 
     }
 
+    /**
+     * 归并排序
+     * @param arr
+     */
     public void mergeSort(int[] arr){
+        int low = 0, high = arr.length - 1;
+        mergeSortHandler(arr, low, high);
+    }
 
+    private void mergeSortHandler(int[] arr, int low, int high){
+        if (low < high){
+            int mid = (low + high) / 2;
+            mergeSortHandler(arr, low, mid);
+            mergeSortHandler(arr, mid+1, high);
+            merge(arr, low, mid, high);
+        }
+    }
+
+    /**
+     * 两个有序数组
+     * 数组一： [low, mid]
+     * 数组二： [mid+1, high]
+     *
+     * @param arr
+     * @param low
+     * @param mid
+     * @param high
+     */
+    private void merge(int[] arr, int low, int mid, int high){
+
+        int len_1 = mid - low + 1;
+        int len_2 = high - mid;
+
+        int[] tmp_1 = new int[len_1+1];
+        int[] tmp_2 = new int[len_2+1];
+
+        for (int i = low; i <= mid; i++){
+            tmp_1[i-low] = arr[i];
+        }
+
+        for (int i = mid+1; i <= high; i++){
+            tmp_2[i-mid-1] = arr[i];
+        }
+
+        tmp_1[len_1] = Integer.MAX_VALUE;
+        tmp_2[len_2] = Integer.MAX_VALUE;
+
+        int index_1 = 0, index_2 = 0;
+
+        for (int index = low; index <= high; index++ ){
+            if (tmp_1[index_1] < tmp_2[index_2]){
+                arr[index] = tmp_1[index_1++];
+            }else{
+                arr[index] = tmp_2[index_2++];
+            }
+        }
     }
 
     /**
