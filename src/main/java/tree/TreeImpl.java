@@ -352,4 +352,31 @@ public class TreeImpl implements Tree {
     public void updateHeight(TreeNode currentNode){
         this.height = getHeight(currentNode);
     }
+
+    /**
+     * 根据先序遍历和中序遍历序列重建二叉树
+     * @param pre
+     * @param in
+     * @return
+     */
+    public TreeImpl reConstructBinaryTree(int[] pre, int[] in){
+        TreeNode root = reConstructHandler(pre, 0, pre.length-1, in, 0, in.length-1);
+        return new TreeImpl(root);
+    }
+
+    private TreeNode reConstructHandler(int[] pre, int prelow, int prehigh, int[] in, int inlow, int inhigh){
+        if (prelow > prehigh || inlow > inhigh){
+            return null;
+        }
+
+        TreeNode root = new TreeNode(pre[prelow]);
+        for (int i = inlow; i <= inhigh; i++){
+            if (in[i] == root.val){
+                root.left = reConstructHandler(pre, prelow+1, prelow+i-inlow, in, inlow, i-1);
+                root.right = reConstructHandler(pre, prelow+i-inlow+1, prehigh, in, i+1, inhigh);
+                break;
+            }
+        }
+        return root;
+    }
 }

@@ -31,13 +31,16 @@ public class TreeClient {
         TreeNode node = client.createTree();
         TreeImpl tree = new TreeImpl(node);
 
+
+        Utils.println("先序遍历");
         List<TreeNode> nodeList = tree.preOrder(true, tree.getRoot());
         Utils.println(nodeList);
 
         nodeList.clear();
+        Utils.println("中序遍历");
         nodeList = tree.inOrder(false, tree.getRoot());
         Utils.println(nodeList);
-
+        Utils.println("后序遍历");
         nodeList.clear();
         nodeList = tree.postOrder(false, tree.getRoot());
         Utils.println(nodeList);
@@ -52,5 +55,14 @@ public class TreeClient {
         Utils.println(tree.getAllAncestors(tree.getRoot().right.right.left));
         Utils.println(tree.getAllAncestors(tree.getRoot().left.left));
         Utils.println(tree.getNestestAncestor(tree.getRoot(), tree.getRoot().right.right.left, tree.getRoot().right.left, true));
+
+        int[] pre = new int[]{1, 2, 4, 5, 3, 6, 7, 8};
+        int[] in = new int[]{4, 2, 5, 1, 6, 3, 8, 7};
+
+        TreeImpl t = tree.reConstructBinaryTree(pre, in);
+        Utils.println("测试的后序遍历");
+        nodeList.clear();
+        nodeList = t.postOrder(false, tree.getRoot());
+        Utils.println(nodeList);
     }
 }
