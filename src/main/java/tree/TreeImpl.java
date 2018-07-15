@@ -2,10 +2,7 @@ package tree;
 
 import utils.Utils;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class TreeImpl implements Tree {
 
@@ -370,13 +367,14 @@ public class TreeImpl implements Tree {
         }
 
         TreeNode root = new TreeNode(pre[prelow]);
-        for (int i = inlow; i <= inhigh; i++){
-            if (in[i] == root.val){
-                root.left = reConstructHandler(pre, prelow+1, prelow+i-inlow, in, inlow, i-1);
-                root.right = reConstructHandler(pre, prelow+i-inlow+1, prehigh, in, i+1, inhigh);
+        for (int i = inlow; i <= inhigh; i++) {
+            if (in[i] == root.val) {
+                root.left = reConstructHandler(pre, prelow + 1, prelow + i - inlow, in, inlow, i - 1);
+                root.right = reConstructHandler(pre, prelow + i - inlow + 1, prehigh, in, i + 1, inhigh);
                 break;
             }
         }
         return root;
     }
+
 }
