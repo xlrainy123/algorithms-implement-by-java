@@ -15,10 +15,10 @@ public class Solution {
             result = helper(root1,root2);
         }
         if (!result){
-            result = HasSubtree(root1, root2);
+            result = HasSubtree(root1.left, root2);
         }
         if (!result){
-            result = HasSubtree(root1, root2);
+            result = HasSubtree(root1.right, root2);
         }
         return result;
     }
