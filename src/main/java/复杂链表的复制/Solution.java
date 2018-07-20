@@ -47,7 +47,7 @@ public class Solution {
      * @param head
      * @return
      */
-    public RandomListNode Clone(RandomListNode head,boolean withmap) {
+    public RandomListNode Clone(RandomListNode head, boolean withmap) {
         RandomListNode newhead = copy(head);
         RandomListNode current = newhead;
         while (current != null){
