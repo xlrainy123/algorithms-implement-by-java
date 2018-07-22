@@ -1,3 +1,11 @@
+## 设计模式
+* 单例模式
+
+
+## 多线程
+* volatile
+* AtomicInteger
+* synchronized
 ## 数据结构
 * 链表
 * 二叉树
