@@ -1,6 +1,6 @@
-package DesignPattern;
+package DesignPattern.template;
 
-public class TemplateImpl extends Template{
+public class TemplateImpl extends Template {
 
     public void step1(){
         System.out.println("1");

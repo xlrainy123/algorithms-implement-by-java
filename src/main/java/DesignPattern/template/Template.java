@@ -1,4 +1,4 @@
-package DesignPattern;
+package DesignPattern.template;
 
 /**
  * 模板方法

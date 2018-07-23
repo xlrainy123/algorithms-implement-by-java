@@ -1,4 +1,4 @@
-package DesignPattern;
+package DesignPattern.singleton;
 
 public class SingletonFactory {
     /**
