@@ -40,7 +40,7 @@ public class WaitNotify {
         waitNotify.start();
     }
 
-    class Wait extends Thread{
+    class Wait extends Thread {
         @Override
         public void run(){
             System.out.println("wait线程开始执行！");
@@ -60,7 +60,6 @@ public class WaitNotify {
     }
 
     class Notify extends Thread{
-
         @Override
         public void run(){
             System.out.println("notify线程开始执行！");
