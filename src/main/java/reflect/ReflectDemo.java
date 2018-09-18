@@ -53,7 +53,7 @@ public class ReflectDemo {
 //        System.out.println(test.name);
 
 //        System.out.println(test.getAge());
-
+        System.out.println(3<<1);
         demo.invokeMethod(clazz);
     }
 }
