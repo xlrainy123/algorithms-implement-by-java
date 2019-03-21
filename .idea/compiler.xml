@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="algorithm" />
+        <module name="algorithms-implement-by-java" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="algorithm" target="1.5" />
+      <module name="algorithms-implement-by-java" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
