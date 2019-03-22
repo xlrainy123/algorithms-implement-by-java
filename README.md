@@ -42,3 +42,5 @@
 [Spring Boot 最流行的 16 条实践解读！](https://maimai.cn/article/detail?fid=1173797755&efid=ilMAqnG6rEsrCzuU4DZL8A)
 
 [Spring MVC的工作原理](https://maimai.cn/article/detail?fid=546239571&efid=_Zv--wGnx1o0M0zPt8EcaA)
+
+[Java反射和动态代理](https://www.cnblogs.com/luoxn28/p/5686794.html)
