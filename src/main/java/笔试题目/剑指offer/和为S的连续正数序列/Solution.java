@@ -1,4 +1,4 @@
-package 和为S的连续正数序列;
+package 笔试题目.剑指offer.和为S的连续正数序列;
 
 import java.util.*;
 

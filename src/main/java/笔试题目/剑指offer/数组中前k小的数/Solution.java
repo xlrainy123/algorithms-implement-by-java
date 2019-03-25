@@ -1,4 +1,4 @@
-package 数组中前k小的数;
+package 笔试题目.剑指offer.数组中前k小的数;
 
 
 import java.util.*;

@@ -1,4 +1,4 @@
-package pdd;
+package 笔试题目.pdd;
 import java.util.*;
 
 public class 六一儿童节 {

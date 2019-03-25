@@ -1,7 +1,4 @@
-package pdd;
-
-import org.omg.CORBA.INTERNAL;
-import sun.applet.Main;
+package 笔试题目.pdd;
 
 import java.util.ArrayList;
 import java.util.List;

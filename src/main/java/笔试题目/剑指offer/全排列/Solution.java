@@ -1,4 +1,4 @@
-package 全排列;
+package 笔试题目.剑指offer.全排列;
 
 import java.util.ArrayList;
 import java.util.*;

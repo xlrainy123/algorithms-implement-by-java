@@ -1,4 +1,4 @@
-package 整数中1的个数;
+package 笔试题目.剑指offer.整数中1的个数;
 
 public class Solution {
 

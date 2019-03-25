@@ -1,4 +1,4 @@
-package 数组中连续最大子数组;
+package 笔试题目.剑指offer.数组中连续最大子数组;
 
 public class Solution {
 

@@ -1,4 +1,4 @@
-package 数组中个数超过一半的元素;
+package 笔试题目.剑指offer.数组中个数超过一半的元素;
 
 public class Solution {
 

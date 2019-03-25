@@ -1,4 +1,4 @@
-package 两个栈实现一个队列;
+package 笔试题目.剑指offer.两个栈实现一个队列;
 
 
 import java.util.Stack;

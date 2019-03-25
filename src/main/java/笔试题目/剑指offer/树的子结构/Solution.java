@@ -1,4 +1,4 @@
-package 树的子结构;
+package 笔试题目.剑指offer.树的子结构;
 
 import tree.TreeNode;
 

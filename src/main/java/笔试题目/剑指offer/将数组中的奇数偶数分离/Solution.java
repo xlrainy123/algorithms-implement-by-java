@@ -1,4 +1,4 @@
-package 将数组中的奇数偶数分离;
+package 笔试题目.剑指offer.将数组中的奇数偶数分离;
 
 public class Solution {
 

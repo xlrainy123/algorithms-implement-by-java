@@ -1,4 +1,4 @@
-package 二叉树的路径之和等于指定值;
+package 笔试题目.剑指offer.二叉树的路径之和等于指定值;
 
 import tree.TreeNode;
 import java.util.*;

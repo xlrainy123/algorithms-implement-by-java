@@ -1,4 +1,4 @@
-package alibaba;
+package 笔试题目.alibaba;
 import java.util.Scanner;
 
 public class PathDistance {
