@@ -46,6 +46,7 @@ public class ClassDemo {
         System.out.println("class simple name is: " + cc.getSimpleName());
         System.out.println("class is interface?" + " [" + cc.isInterface() + "]");
         System.out.println("------------------------------");
+
     }
 
     public static void getAllSuperClass(Class c) {
@@ -104,12 +105,18 @@ public class ClassDemo {
 //        Class c = null;
 //        printInfo(c);
 //        getAllSuperClass(c);
-        Class x = Student.class;
-        try {
-            x = Class.forName("reflect.Student");
-        } catch (ClassNotFoundException e) {
-            System.out.println("The class Student is not found!");
-            System.exit(1);
+//        Class x = Student.class;
+//        try {
+//            x = Class.forName("reflect.Student");
+//        } catch (ClassNotFoundException e) {
+//            System.out.println("The class Student is not found!");
+//            System.exit(1);
+//        }
+        Person p = new Person();
+        if (p instanceof Student){
+            System.out.println("true");
+        }else {
+            System.out.println("false");
         }
     }
 }
