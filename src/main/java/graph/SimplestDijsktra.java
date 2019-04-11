@@ -49,6 +49,10 @@ public class SimplestDijsktra implements PathSearcher{
         this.visited = new boolean[graph.length][graph[0].length];
     }
 
+    public int heuristic(Node o1, Node o2){
+        return Math.abs(o1.x-o2.x) + Math.abs(o1.y-o2.y);
+    }
+
     @Override
     public void search(int start, int end){
         Queue<Node> queue = new PriorityQueue<>(new Comparator<Node>() {
@@ -59,6 +63,7 @@ public class SimplestDijsktra implements PathSearcher{
         });
         Map<Node, Integer> costs = new HashMap<>();
         Node startNode = getStart(start);
+        Node endNode = getEnd(end);
         queue.offer(startNode);
         costs.put(startNode, 0);
         visited[startNode.x][startNode.y] = true;
@@ -76,11 +81,11 @@ public class SimplestDijsktra implements PathSearcher{
                     continue;
                 }
                 Node next = new Node(nextX, nextY, graph[nextX][nextY]);
-                if (!costs.containsKey(next) || costs.get(pNode) + pNode.caculateCostWith(next) < costs.get(next)){
-                    int newCost =  costs.get(pNode) + pNode.caculateCostWith(next);
-                    next.cost = newCost;
+                int newCost =  costs.get(pNode) + pNode.caculateCostWith(next);
+                if (!costs.containsKey(next) || newCost < costs.get(next)){
+                    next.cost = newCost + heuristic(endNode,next);
                     next.parent = pNode;
-                    costs.put(next, newCost);
+                    costs.put(next, newCost + heuristic(endNode,next));
                     queue.offer(next);
                 }
             }
@@ -103,6 +108,17 @@ public class SimplestDijsktra implements PathSearcher{
             for (int j = 0; j < graph[0].length; j++){
                 if (graph[i][j] == start) {
                     return new Node(i, j, start);
+                }
+            }
+        }
+        return null;
+    }
+
+    public Node getEnd(int end){
+        for (int i = 0; i < graph.length; i++){
+            for (int j = 0; j < graph[0].length; j++){
+                if (graph[i][j] == end) {
+                    return new Node(i, j, end);
                 }
             }
         }

@@ -101,6 +101,8 @@ public class Dijsktra {
         };
         demo.getPath(graph, 0,1);
     }
+
+
     class Node{
         int num;
         Node(int num){
