@@ -93,7 +93,6 @@ public class MessageServer {
             }catch (IOException e) {
                 //todo
             }
-
         }
     }
 }
